@@ -1,5 +1,56 @@
 package Paquete;
 
 public class Jugador {
-
+	protected String nombre;
+	protected String apellido;
+	protected String posicion;
+	protected int dorsal;
+	protected EstadisticasJugador estadisticasJug; 
+	protected boolean enCancha;
+	
+	public Jugador(String n, String a, String p, int d)
+	{
+		nombre=n;
+		apellido=a;
+		posicion=p;
+		dorsal=d;
+	}
+	
+	public String getNombreJ()
+	{
+		return nombre;
+	}
+	
+	public String getApellido()
+	{
+		return apellido;
+	}
+	
+	public String getPosicion()
+	{
+		return posicion;
+	}
+	
+	public int getDorsal()
+	{
+		return dorsal;
+	}
+	
+	public boolean getEnCancha()
+	{
+		return enCancha;
+	}
+	
+	public void cambiarJugador()
+	{
+		
+		if (enCancha ==true)
+		{
+			enCancha=false;
+		}
+		else
+		{
+			enCancha=true;
+		}
+	}
 }
