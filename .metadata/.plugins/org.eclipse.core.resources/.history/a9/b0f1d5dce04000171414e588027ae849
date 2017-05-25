@@ -1,10 +1,11 @@
 package Paquete;
 import java.util.LinkedList;
+import java.util.List;
 public class Temporada {
 	protected int anio;
 	protected String liga;
-	protected LinkedList<Equipo> listaEquipos = new LinkedList<Equipo>();
-
-
-
+	protected List<Equipo> listaEquipos = new LinkedList<Equipo>();
+	
+	
+	
 }

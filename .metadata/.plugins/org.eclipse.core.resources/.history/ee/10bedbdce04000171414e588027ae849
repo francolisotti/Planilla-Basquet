@@ -7,7 +7,7 @@ public class Jugador {
 	protected int dorsal;
 	protected EstadisticasJugador estadisticasJug; 
 	protected boolean enCancha;
-
+	
 	public Jugador(String n, String a, String p, int d)
 	{
 		nombre=n;
@@ -15,35 +15,35 @@ public class Jugador {
 		posicion=p;
 		dorsal=d;
 	}
-
+	
 	public String getNombreJ()
 	{
 		return nombre;
 	}
-
+	
 	public String getApellido()
 	{
 		return apellido;
 	}
-
+	
 	public String getPosicion()
 	{
 		return posicion;
 	}
-
+	
 	public int getDorsal()
 	{
 		return dorsal;
 	}
-
+	
 	public boolean getEnCancha()
 	{
 		return enCancha;
 	}
-
+	
 	public void cambiarJugador()
 	{
-
+		
 		if (enCancha ==true)
 		{
 			enCancha=false;

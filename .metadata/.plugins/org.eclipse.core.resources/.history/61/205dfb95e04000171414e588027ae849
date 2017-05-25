@@ -1,5 +1,4 @@
 package Paquete;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -39,12 +38,11 @@ public class Cronometro extends JFrame implements Runnable, ActionListener{
 		btn.addActionListener( this );
 		add( btn, BorderLayout.NORTH );
 
-		//Boton reiniciar muestra tiempo inicial
+		//Boton reiniciar inicia nuevamente desde 0
 		JButton btnP = new JButton( "Reiniciar" );
 		btnP.addActionListener( this );
 		add( btnP, BorderLayout.EAST );
 
-		// frena el tiempo
 		JButton btnD = new JButton( "Detener" );
 		btnD.addActionListener( this );
 		add( btnD, BorderLayout.WEST );
@@ -87,7 +85,7 @@ public class Cronometro extends JFrame implements Runnable, ActionListener{
 								reiniciarCronometro();
 								llegoA0=true;
 							}
-						} 
+						}	
 					}
 
 
@@ -144,14 +142,10 @@ public class Cronometro extends JFrame implements Runnable, ActionListener{
 	//en verdadero para que entre en el while
 	public void iniciarCronometro() 
 	{
-		if (cronometroActivo==false) //para que no lo vuelva a iniciar si ya está iniciado
-		{                            //y noacelere el tiempo 
-			cronometroActivo = true;
-			pausar = true;
-			hilo = new Thread( this );
-			hilo.start();
-		}
-
+		cronometroActivo = true;
+		pausar = true;
+		hilo = new Thread( this );
+		hilo.start();
 	}
 
 	//Esto es para parar el cronometro
@@ -161,20 +155,14 @@ public class Cronometro extends JFrame implements Runnable, ActionListener{
 		pausar = true ;
 	}
 
-	//reiniciar el cronometro a tiempo inicial
 	public void reiniciarCronometro()
 	{
 		cronometroActivo = false;
 		pausar = false;
-		tiempo.setText("12:00:000");
+		tiempo.setText( "12:00:000" );
 		minutos=12;
 		segundos=0;
 		milesimas=0;
-	}
-
-	public String getTiempoActual()
-	{
-		return minutos+":"+segundos+":"+milesimas;
 	}
 
 	public static void main(String[] args) 
